@@ -26,7 +26,7 @@ function groupAnagrams(words) {
   }
   
   // Example usage:
-  const input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+  const input = ["eat", "tea", "tan", "ate", "nat", "bat", "khat"];
   console.log(groupAnagrams(input));
   
 
