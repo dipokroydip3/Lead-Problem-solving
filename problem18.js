@@ -44,28 +44,53 @@
 
 
 
-function findDuplicates(arr) {
-    let freq = {};
-    let duplicates = {};
+// function findDuplicates(arr) {
+//     let freq = {};
+//     let duplicates = {};
 
-    // frequency count
-    for (let index in arr) {
-        let value = arr[index];
-        freq[value] = (freq[value] || 0) + 1;
-    }
+//     // frequency count
+//     for (let index in arr) {
+//         let value = arr[index];
+//         freq[value] = (freq[value] || 0) + 1;
+//     }
 
-    // filter duplicates
-    for (let key in freq) {
-        if (freq[key] > 1) {
-            duplicates[key] = freq[key];
+//     // filter duplicates
+//     for (let key in freq) {
+//         if (freq[key] > 1) {
+//             duplicates[key] = freq[key];
+//         }
+//     }
+
+//     return duplicates;
+// }
+
+// // Test
+// console.log(findDuplicates([2, 3, 4, 2, 5, 3, 6, 3]));
+
+
+
+
+var twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
         }
     }
+};
 
-    return duplicates;
-}
+console.log();
 
-// Test
-console.log(findDuplicates([2, 3, 4, 2, 5, 3, 6, 3]));
+
+nums = [2, 7, 11, 15]
+target = 9
+
+const result = twoSum(nums, target)
+
+console.log( result);
+
+
 
 
 
