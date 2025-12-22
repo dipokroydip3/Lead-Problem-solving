@@ -70,27 +70,46 @@
 
 
 
-var twoSum = function(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j];
-            }
+// var twoSum = function(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = i + 1; j < nums.length; j++) {
+//             if (nums[i] + nums[j] === target) {
+//                 return [i, j];
+//             }
+//         }
+//     }
+// };
+
+// console.log();
+
+
+// nums = [2, 7, 11, 15]
+// target = 9
+
+// const result = twoSum(nums, target)
+
+// console.log( result);
+
+
+
+
+
+
+function largestSalary (maxSalary, target) {
+    for (let i = 0; i < maxSalary.length; i++){
+
+        if(maxSalary[i] === target){
+            return("Found the number"  + i);
         }
+        
     }
-};
 
-console.log();
-
-
-nums = [2, 7, 11, 15]
-target = 9
-
-const result = twoSum(nums, target)
-
-console.log( result);
+}
 
 
+let salary = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+let target = 100;
+console.log(largestSalary(salary, target));
 
 
 
