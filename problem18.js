@@ -95,21 +95,46 @@
 
 
 
-function largestSalary (maxSalary, target) {
-    for (let i = 0; i < maxSalary.length; i++){
+// function largestSalary (maxSalary, target) {
+//     for (let i = 0; i < maxSalary.length; i++){
 
-        if(maxSalary[i] === target){
-            return("Found the number"  + i);
-        }
+//         if(maxSalary[i] === target){
+//             return("Found the number"  + i);
+//         }
         
-    }
+//     }
 
-}
+// }
 
 
-let salary = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-let target = 100;
-console.log(largestSalary(salary, target));
+// let salary = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+// let target = 100;
+// console.log(largestSalary(salary, target));
+
+
+
+
+const employees = [
+  { name: "Rahim", department: "IT", salary: 50000 },
+  { name: "Karim", department: "HR", salary: 30000 },
+  { name: "Sajib", department: "IT", salary: 70000 },
+  { name: "Nadia", department: "HR", salary: 40000 },
+  { name: "Hasan", department: "Finance", salary: 60000 }
+];
+
+
+const departmentSalary = employees.reduce((acc, emp) => {
+  if (!acc[emp.department]) {
+    acc[emp.department] = 0;
+  }
+
+  acc[emp.department] += emp.salary;
+
+  return acc;
+}, {});
+
+console.log(departmentSalary);
+
 
 
 
