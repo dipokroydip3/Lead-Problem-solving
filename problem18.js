@@ -114,26 +114,48 @@
 
 
 
-const employees = [
-  { name: "Rahim", department: "IT", salary: 50000 },
-  { name: "Karim", department: "HR", salary: 30000 },
-  { name: "Sajib", department: "IT", salary: 70000 },
-  { name: "Nadia", department: "HR", salary: 40000 },
-  { name: "Hasan", department: "Finance", salary: 60000 }
-];
+// const employees = [
+//   { name: "Rahim", department: "IT", salary: 50000 },
+//   { name: "Karim", department: "HR", salary: 30000 },
+//   { name: "Sajib", department: "IT", salary: 70000 },
+//   { name: "Nadia", department: "HR", salary: 40000 },
+//   { name: "Hasan", department: "Finance", salary: 60000 }
+// ];
 
 
-const departmentSalary = employees.reduce((acc, emp) => {
-  if (!acc[emp.department]) {
-    acc[emp.department] = 0;
+// const departmentSalary = employees.reduce((acc, emp) => {
+//   if (!acc[emp.department]) {
+//     acc[emp.department] = 0;
+//   }
+
+//   acc[emp.department] += emp.salary;
+
+//   return acc;
+// }, {});
+
+// console.log(departmentSalary);
+
+
+
+
+
+let arr = [3, 1, 2, 3, 4, 3, 2, 1, 3];
+
+let freq = {};
+let maxCount = 0;
+let result = arr[0];
+
+for (let i = 0; i < arr.length; i++) {
+  freq[arr[i]] = (freq[arr[i]] || 0) + 1;
+
+  if (freq[arr[i]] > maxCount) {
+    maxCount = freq[arr[i]];
+    result = arr[i];
   }
+}
 
-  acc[emp.department] += emp.salary;
+console.log(result); // 3
 
-  return acc;
-}, {});
-
-console.log(departmentSalary);
 
 
 
