@@ -137,27 +137,49 @@
 
 
 
-const manHead = {
-  head : "hire",
-  nose : ""
-}
+// const manHead = {
+//   head : "hire",
+//   nose : ""
+// }
 
-let arr = [3, 1, 2, 3, 4, 3, 2, 1, 3];
+// let arr = [3, 1, 2, 3, 4, 3, 2, 1, 3];
 
-let freq = {};
-let maxCount = 0;
-let result = arr[0];
+// let freq = {};
+// let maxCount = 0;
+// let result = arr[0];
 
-for (let i = 0; i < arr.length; i++) {
-  freq[arr[i]] = (freq[arr[i]] || 0) + 1;
+// for (let i = 0; i < arr.length; i++) {
+//   freq[arr[i]] = (freq[arr[i]] || 0) + 1;
 
-  if (freq[arr[i]] > maxCount) {
-    maxCount = freq[arr[i]];
-    result = arr[i];
+//   if (freq[arr[i]] > maxCount) {
+//     maxCount = freq[arr[i]];
+//     result = arr[i];
+//   }
+// }
+
+// console.log(result); // 3
+
+
+
+
+const students = [
+  { name: "Rahim", marks: 45 },
+  { name: "Karim", marks: 78 },
+  { name: "Dipok", marks: 62 },
+  { name: "Sumon", marks: 90 },
+  { name: "Rafi", marks: 55 }
+];
+
+
+let total = 0;
+
+for (const student of students) {
+  if (student.marks >= 60) {
+    total += student.marks * student.marks;
   }
 }
 
-console.log(result); // 3
+console.log(total);
 
 
 
