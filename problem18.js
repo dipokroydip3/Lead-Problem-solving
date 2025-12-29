@@ -162,24 +162,50 @@
 
 
 
-const students = [
-  { name: "Rahim", marks: 45 },
-  { name: "Karim", marks: 78 },
-  { name: "Dipok", marks: 62 },
-  { name: "Sumon", marks: 90 },
-  { name: "Rafi", marks: 55 }
-];
+// const students = [
+//   { name: "Rahim", marks: 45 },
+//   { name: "Karim", marks: 78 },
+//   { name: "Dipok", marks: 62 },
+//   { name: "Sumon", marks: 90 },
+//   { name: "Rafi", marks: 55 }
+// ];
 
 
-let total = 0;
+// let total = 0;
 
-for (const student of students) {
-  if (student.marks >= 60) {
-    total += student.marks * student.marks;
-  }
+// for (const student of students) {
+//   if (student.marks >= 60) {
+//     total += student.marks * student.marks;
+//   }
+// }
+
+// console.log(total);
+
+
+
+function longestEqualZeroOne(arr) {
+    let map = new Map();
+    let sum = 0;
+    let maxLength = 0;
+
+    // Handle case where subarray starts from index 0
+    map.set(0, -1);
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i] === 0 ? -1 : 1;
+
+        if (map.has(sum)) {
+            maxLength = Math.max(maxLength, i - map.get(sum));
+        } else {
+            map.set(sum, i);
+        }
+    }
+
+    return maxLength;
 }
 
-console.log(total);
+// Example
+console.log(longestEqualZeroOne([0, 1, 0, 1, 1, 0, 0])); // 6
 
 
 
