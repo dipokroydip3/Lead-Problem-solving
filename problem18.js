@@ -187,6 +187,7 @@ function longestEqualZeroOne(arr) {
     let map = new Map();
     let sum = 0;
     let maxLength = 0;
+    let minLength = 0;
 
     // Handle case where subarray starts from index 0
     map.set(0, -1);
