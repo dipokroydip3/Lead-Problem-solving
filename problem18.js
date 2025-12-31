@@ -183,30 +183,50 @@
 
 
 
-function longestEqualZeroOne(arr) {
-    let map = new Map();
-    let sum = 0;
-    let maxLength = 0;
-    let minLength = 0;
+// function longestEqualZeroOne(arr) {
+//     let map = new Map();
+//     let sum = 0;
+//     let maxLength = 0;
+//     let minLength = 0;
 
-    // Handle case where subarray starts from index 0
-    map.set(0, -1);
+//     // Handle case where subarray starts from index 0
+//     map.set(0, -1);
 
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i] === 0 ? -1 : 1;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i] === 0 ? -1 : 1;
 
-        if (map.has(sum)) {
-            maxLength = Math.max(maxLength, i - map.get(sum));
-        } else {
-            map.set(sum, i);
-        }
+//         if (map.has(sum)) {
+//             maxLength = Math.max(maxLength, i - map.get(sum));
+//         } else {
+//             map.set(sum, i);
+//         }
+//     }
+
+//     return maxLength;
+// }
+
+// // Example
+// console.log(longestEqualZeroOne([0, 1, 0, 1, 1, 0, 0])); // 6
+
+
+
+
+function mostFrequent(arr) {
+  const freq = {};
+  let max = 0, result;
+
+  for (let n of arr) {
+    freq[n] = (freq[n] || 0) + 1;
+    if (freq[n] > max) {
+      max = freq[n];
+      result = n;
     }
-
-    return maxLength;
+  }
+  return result;
 }
 
-// Example
-console.log(longestEqualZeroOne([0, 1, 0, 1, 1, 0, 0])); // 6
+console.log(mostFrequent(arr));
+
 
 
 
