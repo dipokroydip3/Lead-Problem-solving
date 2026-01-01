@@ -228,6 +228,8 @@ function mostFrequent(arr) {
 console.log(mostFrequent(arr));
 
 
+const nul = 35 ;
+
 
 
 
