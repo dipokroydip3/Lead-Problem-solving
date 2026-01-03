@@ -225,11 +225,14 @@ function mostFrequent(arr) {
   return result;
 }
 
+
+
+// const nul = 35 ;
+
+let arr = [10, 20, 30, 40, 50, 60];
+mostFrequent(arr);
+
 console.log(mostFrequent(arr));
-
-
-const nul = 35 ;
-
 
 
 
