@@ -208,7 +208,7 @@
 // // Example
 // console.log(longestEqualZeroOne([0, 1, 0, 1, 1, 0, 0])); // 6
 
-
+const rr = [1, 5, 7, 9];
 
 
 function mostFrequent(arr) {
