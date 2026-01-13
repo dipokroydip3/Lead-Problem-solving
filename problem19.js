@@ -18,16 +18,33 @@
 
 
 
-function checkEvenOdd(num) {
-  if (num % 2 === 0) {
-    console.log("Even");
-  } else {
-    console.log("Odd");
+// function checkEvenOdd(num) {
+//   if (num % 2 === 0) {
+//     console.log("Even");
+//   } else {
+//     console.log("Odd");
+//   }
+// }
+
+// // Test
+// checkEvenOdd(4);
+// checkEvenOdd(7);
+
+
+
+function isMagicNumber(n, sum = 0, product = 1) {
+  if (n === 0) {
+    return sum === product;
   }
+
+  let digit = n % 10;
+  return isMagicNumber(
+    Math.floor(n / 10),
+    sum + digit,
+    product * digit
+  );
 }
 
-// Test
-checkEvenOdd(4);
-checkEvenOdd(7);
-
+console.log(isMagicNumber(123)); // true
+console.log(isMagicNumber(124)); // false
 
