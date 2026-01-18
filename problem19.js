@@ -52,35 +52,35 @@
 
 
 
-function longestConsecutive(arr) {
-    let maxLength = 0;
+// function longestConsecutive(arr) {
+//     let maxLength = 0;
 
-    for (let i = 0; i < arr.length; i++) {
+//     for (let i = 0; i < arr.length; i++) {
 
-        // check if this is starting number
-        if (!arr.includes(arr[i] - 1)) {
+//         // check if this is starting number
+//         if (!arr.includes(arr[i] - 1)) {
 
-            let currentNum = arr[i];
-            let count = 1;
+//             let currentNum = arr[i];
+//             let count = 1;
 
-            // count consecutive numbers
-            while (arr.includes(currentNum + 1)) {
-                currentNum++;
-                count++;
-            }
+//             // count consecutive numbers
+//             while (arr.includes(currentNum + 1)) {
+//                 currentNum++;
+//                 count++;
+//             }
 
-            // update maximum length
-            if (count > maxLength) {
-                maxLength = count;
-            }
-        }
-    }
+//             // update maximum length
+//             if (count > maxLength) {
+//                 maxLength = count;
+//             }
+//         }
+//     }
 
-    return maxLength;
-}
+//     return maxLength;
+// }
 
-// Test cases
-console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); 
-console.log(longestConsecutive([10, 5, 12, 3, 55, 30, 4, 11, 2]));
+// // Test cases
+// console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); 
+// console.log(longestConsecutive([10, 5, 12, 3, 55, 30, 4, 11, 2]));
 
 
