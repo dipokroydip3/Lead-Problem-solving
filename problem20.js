@@ -32,7 +32,22 @@ function findSmallestEvenDigitSum(arr) {
   }
 
   // Step 2: check digit sum even
-  
+  for (let i = 0; i < unique.length; i++) {
+    let n = unique[i];
+    let sum = 0;
+    let temp = n;
+
+    while (temp > 0) {
+      sum += temp % 10;
+      temp = Math.floor(temp / 10);
+    }
+
+    if (sum % 2 === 0) {
+      if (smallest === null || n < smallest) {
+        smallest = n;
+      }
+    }
+  }
 
   return smallest === null ? "Not Found" : smallest;
 }
