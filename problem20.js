@@ -112,6 +112,8 @@ function longestUniqueSubstring(s) {
 
 // Test
 console.log(longestUniqueSubstring("abcabcbb")); // 3
+console.log(longestUniqueSubstring("pwwkew"));    // 3
+console.log(longestUniqueSubstring("bbbbb"));     // 1
 
 
 
