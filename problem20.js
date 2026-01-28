@@ -93,27 +93,27 @@
 
 
 
-function longestUniqueSubstring(s) {
-    let map = new Map();
-    let left = 0;
-    let maxLength = 0;
+// function longestUniqueSubstring(s) {
+//     let map = new Map();
+//     let left = 0;
+//     let maxLength = 0;
 
-    for (let right = 0; right < s.length; right++) {
-        if (map.has(s[right]) && map.get(s[right]) >= left) {
-            left = map.get(s[right]) + 1;
-        }
+//     for (let right = 0; right < s.length; right++) {
+//         if (map.has(s[right]) && map.get(s[right]) >= left) {
+//             left = map.get(s[right]) + 1;
+//         }
 
-        map.set(s[right], right);
-        maxLength = Math.max(maxLength, right - left + 1);
-    }
+//         map.set(s[right], right);
+//         maxLength = Math.max(maxLength, right - left + 1);
+//     }
 
-    return maxLength;
-}
+//     return maxLength;
+// }
 
-// Test
-console.log(longestUniqueSubstring("abcabcbb")); // 3
-console.log(longestUniqueSubstring("pwwkew"));    // 3
-console.log(longestUniqueSubstring("bbbbb"));     // 1
+// // Test
+// console.log(longestUniqueSubstring("abcabcbb")); // 3
+// console.log(longestUniqueSubstring("pwwkew"));    // 3
+// console.log(longestUniqueSubstring("bbbbb"));     // 1
 
 
 
