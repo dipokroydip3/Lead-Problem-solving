@@ -31,5 +31,7 @@ function manageUsers(events) {
 console.log(manageUsers([
   { type: "login", userId: 101, time: 1 },
   { type: "login", userId: 102, time: 2 },
-  
+  { type: "login", userId: 101, time: 3 },
+  { type: "logout", userId: 102, time: 4 },
+  { type: "login", userId: 103, time: 5 }
 ]));
