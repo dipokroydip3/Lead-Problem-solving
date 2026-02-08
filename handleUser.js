@@ -39,48 +39,86 @@
 
 
 
-const users = [
-  { email: "john@example.com", password: "123456", isActive: true, loginAttempts: 0, role: "user" },
-  { email: "jane@example.com", password: "abcdef", isActive: false, loginAttempts: 0, role: "admin" },
-  { email: "admin@example.com", password: "admin123", isActive: true, loginAttempts: 0, role: "superadmin" }
-];
+// const users = [
+//   { email: "john@example.com", password: "123456", isActive: true, loginAttempts: 0, role: "user" },
+//   { email: "jane@example.com", password: "abcdef", isActive: false, loginAttempts: 0, role: "admin" },
+//   { email: "admin@example.com", password: "admin123", isActive: true, loginAttempts: 0, role: "superadmin" }
+// ];
 
 
-function loginUser(email, password) {
-  // Find user (case-insensitive)
-  const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+// function loginUser(email, password) {
+//   // Find user (case-insensitive)
+//   const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
 
-  if (!user) {
-    return "User not found";
+//   if (!user) {
+//     return "User not found";
+//   }
+
+//   // Check if account is locked
+//   if (user.loginAttempts >= 3) {
+//     return "Account locked";
+//   }
+
+//   // Check password
+//   if (user.password !== password) {
+//     user.loginAttempts++; // increment failed attempt
+//     return "Incorrect password";
+//   }
+
+//   // Check if activeJ
+//   if (!user.isActive) {
+//     return "Account inactive";
+//   }
+
+//   // Reset login attempts on successful login
+//   user.loginAttempts = 0;
+
+//   // Special case for superadmin
+//   if (user.role === "superadmin") {
+//     return "Superadmin logged in";
+//   }
+
+//   return "Login successful";
+// }
+
+
+
+// console.log(loginUser("John@Example.com", "123456"));
+
+
+
+
+
+function validateLogin(user) {
+  const { username, password } = user;
+
+  // Username check
+  if (!username || username.length < 6) {
+    return "Invalid Login";
   }
 
-  // Check if account is locked
-  if (user.loginAttempts >= 3) {
-    return "Account locked";
+  // Password rules
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSpecialChar = /[@#$!]/.test(password);
+  const isLongEnough = password.length >= 8;
+
+  if (
+    isLongEnough &&
+    hasUpperCase &&
+    hasLowerCase &&
+    hasNumber &&
+    hasSpecialChar
+  ) {
+    return "Valid Login";
   }
 
-  // Check password
-  if (user.password !== password) {
-    user.loginAttempts++; // increment failed attempt
-    return "Incorrect password";
-  }
-
-  // Check if activeJ
-  if (!user.isActive) {
-    return "Account inactive";
-  }
-
-  // Reset login attempts on successful login
-  user.loginAttempts = 0;
-
-  // Special case for superadmin
-  if (user.role === "superadmin") {
-    return "Superadmin logged in";
-  }
-
-  return "Login successful";
+  return "Invalid Login";
 }
 
-
-
-console.log(loginUser("John@Example.com", "123456"));
+// Test
+console.log(validateLogin({
+  username: "dipok123",
+  password: "Dipok#2026"
+}));
