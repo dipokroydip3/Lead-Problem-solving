@@ -89,36 +89,45 @@
 
 
 
-function validateLogin(user) {
-  const { username, password } = user;
+// function validateLogin(user) {
+//   const { username, password } = user;
 
-  // Username check
-  if (!username || username.length < 6) {
-    return "Invalid Login";
-  }
+//   // Username check
+//   if (!username || username.length < 6) {
+//     return "Invalid Login";
+//   }
 
-  // Password rules
-  const hasUpperCase = /[A-Z]/.test(password);
-  const hasLowerCase = /[a-z]/.test(password);
-  const hasNumber = /[0-9]/.test(password);
-  const hasSpecialChar = /[@#$!]/.test(password);
-  const isLongEnough = password.length >= 8;
+//   // Password rules
+//   const hasUpperCase = /[A-Z]/.test(password);
+//   const hasLowerCase = /[a-z]/.test(password);
+//   const hasNumber = /[0-9]/.test(password);
+//   const hasSpecialChar = /[@#$!]/.test(password);
+//   const isLongEnough = password.length >= 8;
 
-  if (
-    isLongEnough &&
-    hasUpperCase &&
-    hasLowerCase &&
-    hasNumber &&
-    hasSpecialChar
-  ) {
-    return "Valid Login";
-  }
+//   if (
+//     isLongEnough &&
+//     hasUpperCase &&
+//     hasLowerCase &&
+//     hasNumber &&
+//     hasSpecialChar
+//   ) {
+//     return "Valid Login";
+//   }
 
-  return "Invalid Login";
+//   return "Invalid Login";
+// }
+
+// // Test
+// console.log(validateLogin({
+//   username: "dipok123",
+//   password: "Dipok#2026"
+// }));
+
+
+
+
+let nums = [2,7,11,15];
+
+for(let i = 0; i < nums.length; i++){
+  
 }
-
-// Test
-console.log(validateLogin({
-  username: "dipok123",
-  password: "Dipok#2026"
-}));
