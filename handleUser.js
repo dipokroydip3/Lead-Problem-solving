@@ -125,9 +125,18 @@
 
 
 
+function twoSum(nums, target) {
+  const map = {}; // number -> index store করবে
 
-let nums = [2,7,11,15];
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
 
-for(let i = 0; i < nums.length; i++){
-  
+    // যদি complement আগে থেকেই map এ থাকে
+    if (map.hasOwnProperty(complement)) {
+      return [map[complement], i];
+    }
+
+    // না থাকলে current number map এ রাখো
+    map[nums[i]] = i;
+  }
 }
