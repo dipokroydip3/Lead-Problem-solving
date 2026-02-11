@@ -124,19 +124,23 @@
 // }));
 
 
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number[]}
+//  */
+var twoSum = function(nums, target) {
+    const map = {};
 
-function twoSum(nums, target) {
-  const map = {}; // number -> index store করবে
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
 
-  for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i];
-
-    // যদি complement আগে থেকেই map এ থাকে
-    if (map.hasOwnProperty(complement)) {
-      return [map[complement], i];
+        if (map.hasOwnProperty(complement)) {
+        return [map[complement], i];
     }
 
-    // না থাকলে current number map এ রাখো
     map[nums[i]] = i;
-  }
-}
+    }
+
+};
+console.log(i);
