@@ -143,4 +143,6 @@ var twoSum = function(nums, target) {
     }
 
 };
-console.log(i);
+
+const arr = [10, 20, 0]
+
