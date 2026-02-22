@@ -26,9 +26,17 @@ console.log("Failed Students:", faliedStudents);
 
 const passedStudentNames = students.filter(student => student.marks >= 50)
 .map(student => student.name);
+console.log("Passed Student Names:", passedStudentNames);
+
 
 
 // 3️⃣ Average marks
+// const totalMarks = students.reduce((sum, student) => sum + student.marks, 0);
+// const average = totalMarks / students.length;
+
+// console.log("Average Marks:", average);
+
+
 const totalMarks = students.reduce((sum, student) => sum + student.marks, 0);
 const average = totalMarks / students.length;
 
