@@ -34,5 +34,10 @@ const updatedStudents = students.map(student => ({
 }));
 
 // 3. Average Marks
+const totalMarks = students.reduce((sum, student) => sum + student.marks, 0);
+const average = totalMarks / students.length;
 
+console.log(passedStudents);
+console.log(updatedStudents);
+console.log("Average:", average);
 
