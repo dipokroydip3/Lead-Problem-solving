@@ -42,24 +42,46 @@
 // console.log("Average:", average);
 
 
-var twoSum = function(nums, target) {
-    const map = {};
+// var twoSum = function(nums, target) {
+//     const map = {};
 
-    for(let i = 0; i < nums.length; i++){
-        const complement = target - nums[i];
+//     for(let i = 0; i < nums.length; i++){
+//         const complement = target - nums[i];
 
-        if(map[complement] !== undefined){
-            return [map[complement], i];
+//         if(map[complement] !== undefined){
+//             return [map[complement], i];
+//         }
+
+//         map[nums[i]] = i;
+//     }
+// };
+
+// const nums = [2,7,11,15];
+// const target = 9;
+
+// const result = twoSum(nums, target);
+// console.log(result);
+
+
+var longestCommonPrefix = function(strs) {
+    if(strs.length === 0) return "";
+
+    let prefix = strs[0];
+
+    for(let i = 1; i < strs.length; i++) {
+        while(strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1);
+            if(prefix === "") return "";
         }
-
-        map[nums[i]] = i;
     }
+
+    return prefix;
 };
 
-const nums = [2,7,11,15];
-const target = 9;
+const strs = ["flower","flow","flight"];
+const needOut = ["fl"];
+console.log(strs.length);
 
-const result = twoSum(nums, target);
-console.log(result);
+
 
 
