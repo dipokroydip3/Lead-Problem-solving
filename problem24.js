@@ -11,3 +11,4 @@ function findMedianSortedArrays(nums1, nums2) {
     }
 }
 
+console.log(findMedianSortedArrays([1,3],[2]));
